@@ -1,0 +1,124 @@
+
+.content{
+    top: 120px;
+    position: relative;
+    z-index: 900;
+    margin-bottom: 150px;
+}
+
+.content h3 {
+    font-size: 20px;
+    width: 50%;
+    text-align: center;
+    padding: 20px 20px;
+    margin: auto;
+    margin-top: 15px;
+    cursor: pointer;
+    user-select: none;
+    background-color: #660e29;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 7px 29px 0px;
+    border-radius: 30px;
+    transition: all 0.3s;
+    
+}
+
+.content h3:hover {
+    font-size: 23px;
+}
+
+.content .panel {
+    display: none;
+    font-size: 20px;
+    transition: all 0.3s ease;
+}
+
+.content .panel form{
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+.content .panel form .select{
+    margin: auto;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.content .panel form .select select{
+    width: auto;
+}
+
+.content .panel form table tr{
+    height: 40px;
+    width: 200px;
+}
+
+.content .panel form table tr input{
+    height: 40px;
+    width: 250px;
+    border-radius: 5px;
+    padding: 5px;
+    margin-top: 3px;
+    text-align: left;
+    font-size: 16px;
+
+}
+
+.content .panel form table th{
+    text-align: left;
+}
+
+.content .panel form table tr label{
+    margin-right: 40px;
+    font-weight: 300;
+}
+
+.content .panel form table tr th{
+    text-align: left; 
+    font-size: 18px; 
+    margin-right: 20px; 
+    width: auto;
+
+}
+
+.content .panel .playerToEdit{
+    text-align: center;
+    width: auto;
+    margin: 2px;
+}
+
+.content .panel .playerToEdit #idPlayer{
+    width: 70px;
+}
+
+
+.content .panel form .button{
+    margin: auto;
+    text-align: center;
+}
+
+.content .panel form .button button{
+    margin-top: 10px;
+    height: 40px;
+    width: 80px;
+    border-radius: 10px;
+    background-color: rgb(234, 194, 194);
+    color:#000000;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.content .panel form .button button:hover{
+    scale: 1.2;
+}
+
+.content .panel form select{
+    height: 40px;
+    width: 250px;
+    border-radius: 5px;
+    font-size: 16px;
+
+}
+
+

@@ -1,0 +1,96 @@
+
+.content{
+    top: 120px;
+    position: relative;
+    z-index: 900;
+    margin-bottom: 150px;
+}
+
+.content h3 {
+    font-size: 20px;
+    width: 50%;
+    text-align: center;
+    padding: 20px 20px;
+    margin: auto;
+    margin-top: 15px;
+    cursor: pointer;
+    user-select: none;
+    background-color: #660e29;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 7px 29px 0px;
+    border-radius: 30px;
+    transition: all 0.3s;
+
+}
+
+.content h3:hover {
+    font-size: 23px;
+}
+
+.content .panel {
+    margin-top: 20px;
+    display: none;
+    transition: all 0.3s ease;
+}
+
+.content .panel form{
+    margin: auto;
+}
+
+.content .panel form table tr{
+   height: 35px;
+}
+
+.content .panel form table tr input{
+    padding: 5px;
+    height: 35px;
+    border-color: black;
+    border-radius: 10px;
+}
+
+.content .panel form table .leftItems{
+    width: 180px;
+    text-align: right
+}
+
+.content .panel form table .leftItems select{
+    text-align: center;
+    width: 180px;
+    height: 35px;
+    border-radius: 10px;
+}
+
+.content .panel form table .rightItems{
+    width: 180px;
+    text-align: left;
+}
+
+.content .panel form table .rightItems select{
+    text-align: center;
+    width: 180px;
+    height: 35px;
+    border-radius: 10px;
+}
+
+.content .panel form table .centerItems{
+    text-align: center;
+    padding: 10px;
+}
+
+.content .panel form .button{
+    margin: auto;
+    text-align: center;
+}
+
+.content .panel form .button button{
+    margin-top: 20px;
+    margin-bottom: 30px;
+    height: 40px;
+    width: 100px;
+    border-radius: 10px;
+    background-color: rgb(234, 194, 194);
+    border-color: white;
+    color: rgb(79,12,32);
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}

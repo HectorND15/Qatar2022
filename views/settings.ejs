@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configuracion</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/stileSetting.css">
+    <link rel="icon" href="logo1.png" type="image/x-icon">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <a href="/"><img src="logo.png" alt="logo" class="logo"></a>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li class="unpicked"><a href="live">Online</a></li>
+                <li class="unpicked"><a href="scheduling">Programacion</a></li>
+                <li class="picked"><a href="#">Configuracion</a></li> 
+            </ul>
+        </nav>
+    </header>
+        
+    <div class="content">
+        <h3>Crear Equipo</h3> 
+        <div class="panel" style="display: flex">
+            <form id="crearEquipo" onsubmit="crearSeleccion()" method="dialog" enctype="multipart/form-data">
+                <table>
+                    <tr>
+                        <th> <label for="nombreEquipo ">Nombre</label></th>
+                        <th><input type="text" name="nombre" id="nombreEquipo" placeholder="nombre del equipo" required></th>
+                    </tr>
+                    <tr>
+                        <th><label for="Entrenador ">Entrenador</label></th>
+                        <th><input type="text" name="entrenador" id="entrenadorEquipo" placeholder="nombre del entrenador" required></th>
+                    </tr>
+                    <tr>
+                        <th><label for="logo">Logo</label></th>
+                        <th><input type="file" name="logo" accept="image/png,image/jpeg,image/svg" id="logoEquipo" size="30" required style="width: auto;"></th>
+                    </tr>
+                </table>
+                
+                <div class="button">
+                    <button type="submit">Crear</button>
+                </div>
+            </form>
+        </div>
+        <h3 onclick="updateTeamList()">Editar Equipo</h3>
+        <div class="panel">
+            <form  method="dialog" onsubmit="updateTeam()">
+                <table>
+                    <tr>
+                        <th></th>
+                        <th>
+                            <select name="equipoJugador" onchange="teamEdit()" id="seleccionEdit" style="width: 100%; margin-bottom: 10px; text-align: center;">
+                                <option>Escoja una seleccion</option>
+                            </select>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th style="text-align: center;">Nombre</th>
+                        <th style="text-align: center;">Entrenador</th>
+                        <th style="text-align: center;">Logo</th>
+                    </tr>
+                    <tr>
+                        <th><input style="text-align: center; font-size: 18px; margin-right: 20px;" type="text" name="nombre" id="editarNombreEquipo"></th>
+                        <th><input style="text-align: center; font-size: 18px; margin-right: 20px;" type="text" name="entrenador" id="editarEntrenadorEquipo"></th>
+                        <th><div class="editLogo"><input type="file" name="logo" id="editarLogo"></div></th>
+                    </tr>
+                </table>
+                <div class="button">
+                    <button type="submit">Guardar</button>
+                </div>
+            </form>
+        </div>
+        <h3 onclick="updateTeamList()"  style="margin-top: 70px;">Agregar Jugador</h3>
+        <div class="panel">
+
+            <form method="dialog" id="addlayer" onsubmit="crearJugador()">
+                <table>
+                    <tr>
+                        <th><label for="equipoJugador ">Seleccion</label></th>
+                        <th><select name="equipoJugador" id="equipoJugador" style="width: auto;">
+                            <option>Escoja una seleccion</option>
+                        </select></th>
+                    </tr>
+                    <tr>
+                        <th><label for="nombreJugador ">Nombre</label></th>
+                        <th><input type="text" id="nombreJugador" placeholder="nombre del jugador" required></th>
+                    </tr>
+                    <tr>
+                        <th><label for="apellidoJugador ">Apellido</label></th>
+                        <th> <input type="text" id="apellidoJugador" placeholder="apellido del jugador" required></th>
+                    </tr>
+                    <tr>
+                        <th><label for="numeroJugador ">Numero</label></th>
+                        <th><input type="number" id="numeroJugador" placeholder="camiseta" required style="width: 120px;"></th>
+                    </tr>
+                </table>
+                <div class="button">
+                    <button type="submit">Agregar</button>
+                </div>
+            </form>
+        </div>
+        <h3  onclick="updateTeamList()">Editar Jugador</h3>
+        <div class="panel">
+            <form  method="dialog" onsubmit="updatePlayer()">
+                <div class="select">
+                    <select name="equipoJugador" onchange="playerEdit()" id="seleccionEdit2" style="width: 250px; text-align: center; margin: auto;">
+                        <option>Escoja una seleccion</option>
+                    </select>
+                </div>
+                
+                <table>
+                    <tr style="margin-right: 60px;">
+                        <th style="text-align: center; width: 95px;">ID</th>
+                        <th style="text-align: center; width: 220px;">Nombre</th>
+                        <th style="text-align: center; width: 220px;">Apellido</th>
+                        <th style="text-align: center; width: 95px;">Numero</th>
+                        <th></th>
+                </table>
+                <table  id="playerFields"></table>
+                        <!-- <tr id="playerInputsEdit">
+                            <th><input type="text" name="nombre" id="editarNombreJugador" class="editPlayerInput"></th>
+                            <th><input type="text" name="entrenador" id="editarApellidoJugador" class="editPlayerInput"></th>
+                            <th><input type="number" name="entrenador" id="editarNumeroJugador" class="editPlayerInput"></th>
+                        </tr> -->
+                </table>
+                <div class="button">
+                    <button type="submit">Guardar</button>
+                </div>
+            </form>
+        </div>
+        <h3   style="margin-top: 70px;">Agregar Arbitro</h3>        
+        <div class="panel">
+            <form method="dialog" onsubmit="crearArbitro()">
+                <table>
+                    <tr>
+                        <th><label for="nombreArbitro">Nombre</label></th>
+                        <th><input type="text" id="nombreArbitro" placeholder="nombre del arbitro" required></th>
+                    </tr>
+                    <tr>
+                        <th><label for="procedenciaArbitro ">Procedencia</label></th>
+                        <th><input type="text" id="procedenciaArbitro" placeholder="procedencia del arbitro" required></th>
+                    </tr>
+                </table>
+                <div class="button">
+                    <button type="submit">Guardar</button>
+                </div>
+            </form>
+        </div>
+        <h3 onclick="updateRefereeList()">Editar Arbitro</h3>
+        <div class="panel">
+            <form  method="dialog" onsubmit="updateReferee()">
+                <div class="select">
+                    <select name="equipoJugador" onchange="RefereeEdit()" id="refereeList" style="width: 250px; text-align: center; margin: auto;">
+                        <option>Escoja un Arbitro</option>
+                    </select>
+                </div>
+                <table>
+                    <tr>
+                        <th style="text-align: center;">#</th>
+                        <th style="text-align: center;">Nombre</th>
+                        <th style="text-align: center;">procedencia</th>
+                    </tr>
+                    <tr>
+                        <th><input style="text-align: center; font-size: 18px; width: 60px; background-color: gray;" type="text" disabled name="nombre" id="editarIDArbitro"></th>
+                        <th><input style="text-align: center; font-size: 18px; width: auto;" type="text" name="nombre" id="editarNombreArbitro"></th>
+                        <th><input style="text-align: center; font-size: 18px; width: auto;" type="text" name="entrenador" id="editarProcedenciaArbitro"></th>
+                    </tr>
+                </table>
+                <div class="button">
+                    <button type="submit">Guardar</button>
+                </div>
+            </form>
+        </div>
+        <h3  style="margin-top: 70px;">Agregar Estadios</h3>
+        <div class="panel">
+            <form method="dialog" onsubmit="crearEstadio()">
+                <table>
+                    <tr>
+                        <th><label for="nombreEstado ">Nombre</label></th>
+                        <th><input type="text" id="nombreEstadio" placeholder="nombre del estadio" required></th>
+                    </tr>
+                    <tr>
+                        <th><label for="capacidadEstadio ">Capacidad</label></th>
+                        <th> <input type="number" id="capacidadEstadio" placeholder="capacidad del estadio" required></th>
+                    </tr>
+                    <tr>
+                        <th><label for="ubicacionEstadio ">Ubicacion</label></th>
+                        <th><input type="text" id="ubicacionEstadio" placeholder="ubicacion del estadio" required></th>
+                    </tr>
+                </table>
+                <div class="button">
+                    <button type="submit">Guardar</button>
+                </div>
+            </form>
+        </div>
+        <h3 onclick="updateStadiumList()">Editar Estadio</h3>
+        <div class="panel">
+            <form  method="dialog" onsubmit="updateEstadio()">
+                <div class="select">
+                    <select name="equipoJugador" onchange="EstadioEdit()" id="estadioList" style="width: 250px; text-align: center; margin: auto;">
+                        <option>Escoja un Estadio</option>
+                    </select>
+                </div>
+                <table>
+                    <tr>
+                        <th style="text-align: center;">#</th>
+                        <th style="text-align: center;">Nombre</th>
+                        <th style="text-align: center;">Capacidad</th>
+                        <th style="text-align: center;">Ubicacion</th>
+                    </tr>
+                    <tr>
+                        <th><input style="text-align: center; font-size: 18px; width: 60px; background-color: gray;" type="text" disabled name="nombre" id="editarIDEstadio"></th>
+                        <th><input style="text-align: center; font-size: 18px; width: auto;" type="text" name="nombre" id="editarNombreEstadio"></th>
+                        <th><input style="text-align: center; font-size: 18px; width: 140px;" type="number" name="entrenador" id="editarCapacidadArbitro"></th>
+                        <th><input style="text-align: center; font-size: 18px; width: auto;" type="text" name="entrenador" id="editarUbicacionEstadio"></th>
+                    </tr>
+                </table>
+                <div class="button">
+                    <button type="submit">Guardar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="bottom">
+
+    </div>
+
+
+    <script>
+        let optionSetting = document.getElementsByTagName("h3");
+        let panel1 = optionSetting[0].nextElementSibling;
+        let panel2 = optionSetting[1].nextElementSibling
+        let panel3 = optionSetting[2].nextElementSibling
+        let panel4 = optionSetting[3].nextElementSibling
+        let panel5 = optionSetting[4].nextElementSibling
+        let panel6 = optionSetting[5].nextElementSibling
+        let panel7 = optionSetting[6].nextElementSibling
+        let panel8 = optionSetting[7].nextElementSibling
+    
+        optionSetting[0].addEventListener("click", function(){
+            if (panel1.style.display == "flex"){
+                panel1.style.display ="none"
+            } else {
+                panel1.style.display = "flex";
+                panel2.style.display = "none";
+                panel3.style.display = "none";
+                panel4.style.display = "none";
+                panel5.style.display = "none";
+                panel6.style.display = "none";
+                panel7.style.display = "none";
+                panel8.style.display = "none";
+            }
+        })
+        optionSetting[1].addEventListener("click", function(){
+            if (panel2.style.display == "flex"){
+                panel2.style.display ="none"
+            } else {
+                panel1.style.display = "none";
+                panel2.style.display = "flex";
+                panel3.style.display = "none";
+                panel4.style.display = "none";
+                panel5.style.display = "none";
+                panel6.style.display = "none";
+                panel7.style.display = "none";
+                panel8.style.display = "none";;
+
+            }
+        })
+        optionSetting[2].addEventListener("click", function(){
+            if (panel3.style.display == "flex"){
+                panel3.style.display ="none"
+            } else {
+                panel1.style.display = "none";
+                panel2.style.display = "none";
+                panel3.style.display = "flex";
+                panel4.style.display = "none";
+                panel5.style.display = "none";
+                panel6.style.display = "none";
+                panel7.style.display = "none";
+                panel8.style.display = "none";
+            }
+        })
+        optionSetting[3].addEventListener("click", function(){
+            if (panel4.style.display == "flex"){
+                panel4.style.display ="none"
+            } else {
+                panel1.style.display = "none";
+                panel2.style.display = "none";
+                panel3.style.display = "none";
+                panel4.style.display = "flex";
+                panel5.style.display = "none";
+                panel6.style.display = "none";
+                panel7.style.display = "none";
+                panel8.style.display = "none";
+            }
+        })
+        optionSetting[4].addEventListener("click", function(){
+            if (panel5.style.display == "flex"){
+                panel5.style.display ="none"
+            } else {
+                panel1.style.display = "none";
+                panel2.style.display = "none";
+                panel3.style.display = "none";
+                panel4.style.display = "none";
+                panel5.style.display = "flex";
+                panel6.style.display = "none";
+                panel7.style.display = "none";
+                panel8.style.display = "none";
+            }
+        })
+        optionSetting[5].addEventListener("click", function(){
+            if (panel6.style.display == "flex"){
+                panel6.style.display ="none"
+            } else {
+                panel1.style.display = "none";
+                panel2.style.display = "none";
+                panel3.style.display = "none";
+                panel4.style.display = "none";
+                panel5.style.display = "none";
+                panel6.style.display = "flex";
+                panel7.style.display = "none";
+                panel8.style.display = "none";
+            }
+        })
+        optionSetting[6].addEventListener("click", function(){
+            if (panel7.style.display == "flex"){
+                panel7.style.display ="none"
+            } else {
+                panel1.style.display = "none";
+                panel2.style.display = "none";
+                panel3.style.display = "none";
+                panel4.style.display = "none";
+                panel5.style.display = "none";
+                panel6.style.display = "none";
+                panel7.style.display = "flex";
+                panel8.style.display = "none";
+            }
+        })
+        optionSetting[7].addEventListener("click", function(){
+            if (panel8.style.display == "flex"){
+                panel8.style.display ="none"
+            } else {
+                panel1.style.display = "none";
+                panel2.style.display = "none";
+                panel3.style.display = "none";
+                panel4.style.display = "none";
+                panel5.style.display = "none";
+                panel6.style.display = "none";
+                panel7.style.display = "none";
+                panel8.style.display = "flex";
+            }
+        })
+
+    </script>
+    <script src="/js/createSetting.js"></script>
+    <script src="/js/editSetting.js"></script>
+    <div class="imageLaEeb">
+        <img src="qatar2022.png" alt="la Eeb" style="
+            height: 70px;
+            width: auto;
+            position: fixed;
+            right: 0;
+            bottom: 0;
+        ">
+    </div>
+
+
+</body>
+</html>

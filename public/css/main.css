@@ -1,0 +1,73 @@
+.content {
+    width: 70%;
+    height: auto;
+    position: relative;
+    z-index: 950;
+    margin: 130px auto auto;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 7px 29px 0px;
+    border-radius: 10px;
+    background-color: #660e29;
+}
+
+.content h3{
+    font-size: 18px;
+    text-transform: uppercase;
+    color: #e7fde1;
+    padding: 10px 10px;
+    text-align: right;
+}
+
+.content .equiposEnJuego{
+    padding: 10px 30px;
+    display: flex;
+}
+
+.content .equiposEnJuego .equipo{
+    width: 35%;
+    margin: auto;
+    position: relative;
+}
+
+.content .equiposEnJuego .equipo .img{
+    height: 60px;
+    margin: auto;
+}
+
+.content .equiposEnJuego .equipo .equipoImage{
+    width: 70%;
+    height: auto;
+    margin: auto;
+    background-color: #b56b6b;
+}
+
+.content .equiposEnJuego .equipo .equipoImage img{
+    margin: auto;
+}
+
+.content .equiposEnJuego .equipo .equipoName{
+    text-align: center;
+}
+
+.content .equiposEnJuego .equipo .equipoName span {
+    margin: auto;
+}
+
+.content .equiposEnJuego .marcador{
+    width: 30%;
+    text-align: center;
+
+
+}
+
+.content .equiposEnJuego .marcador .score{
+    font-size: 40px;
+    align-items: center;
+}
+
+.content .equiposEnJuego .marcador .time{
+    color: lightgreen;
+}
+
+
+
+

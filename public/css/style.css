@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Sono:wght@300;400;700&display=swap');
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Sono", sans-serif;
+    user-select: none;
+}
+
+body {
+    background: rgb(79,12,32);
+    color: white;
+}
+
+.header {
+    background-color: #660e29;
+    background: radial-gradient(circle, rgba(102,14,41,1) 46%, rgba(79,12,32,1) 76%);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    display: flex;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+    padding: 5px 5%;
+    margin-bottom: 100px;
+    z-index: 950;
+}
+
+.header .logo {
+    cursor: pointer;
+}
+
+.header .logo img{
+    height: 110px;
+    width: auto;
+    transition: all 0.3s;
+}
+
+.header .logo img:hover{
+    transform: scale(1.2);
+}
+
+.header .nav-links {
+    list-style: none;
+}
+
+.header .nav-links li{
+    font-size: 18px;
+    display: inline-block;
+    padding: 0 20px;
+    transition: all 0.3s;
+   
+}
+
+.header .nav-links .unpicked a:hover{
+    color: #b56b6b;
+}
+
+.header .nav-links .picked {
+    background-color: rgb(79, 12, 32); 
+    border-radius: 20px; 
+    padding: 15px;
+}
+
+.header .nav-links .picked a{
+    color: #ffffff;
+}
+
+
+.header .nav-links a{
+    font-size: 700;
+    font-weight: bold;
+    color: aliceblue;
+    text-decoration: none;
+}

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programacion</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/styleSchedule.css">
+    <link rel="icon" href="logo1.png" type="image/x-icon">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <a href="/"><img src="logo.png" alt="logo" class="logo"></a>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li class="unpicked"><a href="live">Online</a></li>
+                <li class="picked"><a href="#">Programacion</a></li>
+                <li class="unpicked"><a href="setting">Configuracion</a></li> 
+            </ul>
+        </nav>
+    </header>
+    <div class="content">
+        <h3 onclick="updateLists()">Programar Partido</h3>
+        <div class="panel" >
+            <form method="dialog" id="programMatch" onsubmit="programarPartido()">
+                <table>
+                    <tr>
+                        <th class="leftItems">
+                            <select name="team1" id="team1Match"  onclick="updateLists()">
+                                <option>Equipo 1</option>
+                            </select>
+                        </th >
+                        <th class="centerItems"><label for="vs">VS.</label></th>
+                        <th class="rightItems">
+                            <select name="team2" id="team2Match"  onclick="updateLists()">
+                                <option>Equipo 2</option>
+                            </select>
+                        </th>
+                    </tr>
+                    <tr></tr>
+                    <tr>
+                        <th  class="leftItems"><labe>Fecha:</labe></th>
+                        <th  class="centerItems"></th>
+                        <th  class="rightItems"><input id="dateMatch" type="date"></th>
+                    </tr>
+                    <tr>
+                        <th  class="leftItems"><labe>Hora:</labe></th>
+                        <th  class="centerItems"></th>
+                        <th  class="rightItems"><input  id="timeMatch" type="time"></th>
+                    </tr>
+                    <tr>
+                        <th  class="leftItems"><labe>Arbitro:</labe></th>
+                        <th  class="centerItems"></th>
+                        <th  class="rightItems">
+                            <select name="team2" id="matchReferee">
+                                <option>Escoja un arbitro</option>
+                            </select>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th  class="leftItems"><labe>Estadio:</labe></th>
+                        <th  class="centerItems"></th>
+                        <th  class="rightItems">
+                            <select name="team2" id="matchStadium">
+                                <option>Escoja un estadio</option>
+                            </select>
+                        </th>
+                    </tr>
+                </table>
+                <div class="button">
+                    <button type="submit">Programar</button>
+                </div>
+            </form>
+        </div>
+
+        <h3>Editar Programacion</h3>
+        <div class="panel">
+
+        </div>
+    </div>
+
+    <script>
+        let optionSetting = document.getElementsByTagName("h3");
+        let panel1 = optionSetting[0].nextElementSibling;
+        let panel2 = optionSetting[1].nextElementSibling;
+
+        optionSetting[0].addEventListener("click", function(){
+            if (panel1.style.display === "flex"){
+                panel1.style.display ="none"
+            } else {
+                panel1.style.display = "flex";
+                panel2.style.display = "none";
+            }
+        })
+        optionSetting[1].addEventListener("click", function(){
+            if (panel2.style.display === "flex"){
+                panel2.style.display ="none"
+            } else {
+                panel1.style.display = "none";
+                panel2.style.display = "flex";
+            }
+        })
+    </script>
+    <script src="/js/Scheduling.js"></script>
+
+    <div class="imageLaEeb">
+        <img src="qatar2022.png" alt="la Eeb" style="
+            height: 70px;
+            width: auto;
+            position: fixed;
+            right: 0;
+            bottom: 0;
+        ">
+    </div>
+</body>
+</html>
